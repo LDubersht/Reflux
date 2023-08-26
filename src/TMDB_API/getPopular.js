@@ -4,7 +4,7 @@ const getPopular = () => {
     return fetch(popular_movie, options)
         .then((response) => response.json())
         .then((data) => {
-            const firstTopMovies = data.results.slice(0, 10);
+            const firstTopMovies = data.results.slice(0, 12);
 
             return firstTopMovies.map((movie) => ({
                 id: movie.id,

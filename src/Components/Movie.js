@@ -6,9 +6,6 @@ import './Movie.css'
 export default function Movie({movie,action}) {
   const location = useLocation();
 
-  // const localAction = function() {
-  //   callbackSetMovieid(movie.id)
-  // }
     return (
       <div class="one-movie" onClick={action}>
         <Link to = {`../../movies/${movie.id}`}>

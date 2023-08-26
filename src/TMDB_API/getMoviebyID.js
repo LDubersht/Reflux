@@ -1,18 +1,19 @@
 import {options, img_uri,  movie_detail} from "./URI";
 
-const getMoviebyID = () => {
-    return fetch(popular_movie, options)
+export const getMoviebyID = (movieid) => {
+    let uri = movie_detail.replace("{##}",movieid) 
+    return fetch(uri, options)
         .then((response) => response.json())
         .then((data) => {
-            const firstTopMovies = data.results.slice(0, 10);
-
-            return firstTopMovies.map((movie) => ({
-                id: movie.id,
-                title: movie.title,
-                img: img_uri + movie.poster_path,
-                overview: movie.overview,
-                release_date: movie.release_date
-            }));
+            const movie = data
+            return movie
+            // return firstTopMovies.map((movie) => ({
+            //     id: movie.id,
+            //     title: movie.title,
+            //     img: img_uri + movie.poster_path,
+            //     overview: movie.overview,
+            //     release_date: movie.release_date
+            // }));
         })
         .catch((error) => {
             console.error("Get data error:", error);
@@ -20,5 +21,5 @@ const getMoviebyID = () => {
         });
 };
 
-export default getPopular;
+export default getMoviebyID;
 
