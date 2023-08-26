@@ -1,0 +1,21 @@
+/* .users {
+    display: grid; 
+    grid-template-columns: 4fr; 
+    grid-template-rows: 40px; 
+    grid-template-areas: "user"; 
+  } */
+
+  .users {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap; 
+  }
+
+  .user { 
+    display: flex;  
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid red;
+
+  }

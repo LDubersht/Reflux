@@ -1,0 +1,21 @@
+.one-movie {
+    border: 1px solid #543d3d;
+    border-radius: 3px;
+    padding: 4px;
+    height: 480px;
+    width: 300px;
+}
+
+.poster{
+    border: 1px solid #715eb0;
+    border-radius: 3px;
+    padding: 4px;
+    width: 95%;
+}
+
+.movie-title {
+    height: 110px;
+    width: 96%;
+    text-align: center ;
+
+}
