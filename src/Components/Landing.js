@@ -15,7 +15,7 @@ export default function Landing({callbackSetUserid}) {
            <Link key={user.userid}  to = {"/catalog/" + user.userid}>
               <div key={user.userid} className = "user" style={{backgroundColor: user.color }} >
                   {/* <span key={user.userid} >  */}
-                  {user.name} $: {user.budget} M: {user.rented.length} 
+                  {user.name} $: {user.budget} 
                   {/* </span> */}
               </div>
             </Link>
