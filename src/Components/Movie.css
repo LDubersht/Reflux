@@ -2,7 +2,7 @@
     border: 1px solid #543d3d;
     border-radius: 3px;
     padding: 4px;
-    height: 480px;
+    height:500px;
     width: 300px;
 }
 
@@ -18,4 +18,13 @@
     width: 96%;
     text-align: center ;
 
+}
+
+.action
+{
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+    background-color: chartreuse;
 }

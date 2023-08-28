@@ -26,7 +26,7 @@ export default function Movie() {
         <div class="movie-detail">
 
           <h2> {movie.title}</h2>
-          <img className="big-poster" src={img_uri + movie.poster_path}></img>
+          <img class="big-poster" src={img_uri + movie.poster_path}></img>
           <div>Released: {movie.release_date}</div>
           <div>Overview: {movie.overview}</div>
 

@@ -1,6 +1,15 @@
-.poster{
-    border: 1px solid #ddd;
+.movie-detail {
+    border: 1px solid #543d3d;
     border-radius: 3px;
     padding: 4px;
-    width: 22%;
+
+    width: 520px;
+ 
+}
+.big-poster{
+    border: 1px solid #715eb0;
+    border-radius: 5px;
+    padding: 6px;
+    width: 506px;
+
 }

@@ -12,19 +12,23 @@ import MovieDetail from './Components/MovieDetail';
 function App() {
 
   const [currUserid, setCurrUserid] = useState(0);
-  const [currMovieid, setCurrMovieid] = useState(0);
 
+  useEffect(() => {
+    setCurrUserid(0)
+  },[])
+  
   const CallbackSetUserid = function(currUserid) {
+
     useEffect((currUserid) => {
-    setCurrUserid(currUserid)
+          if (currUserid === undefined) {
+            setCurrUserid(0)
+          }
+          else {
+            setCurrUserid(currUserid)
+          }
     })
   }
 
-  const CallbackSetMovieiid = function(currMovieid) {
-    useEffect((currMovieid) => {
-      setCurrMovieid(currMovieid)
-    })
-  }
 
   function Page404() {
     return <div className="page404">404: Page Not Found</div>;
@@ -34,12 +38,12 @@ function App() {
     <Router>
       <div>
         <div className="nav">
-          <RefluxNavbar />
+          <RefluxNavbar currUserid={currUserid}/>
         </div>
         <Routes>
-          <Route path="/" element={<Landing/>} />
-          {/* <Route path="/catalog/" element={<Catalog />} /> */}
-          <Route path="/catalog/:userid" element={<Catalog  callbackSetUserid = {CallbackSetUserid} callbackSetMovieid = {CallbackSetMovieiid}/>} />
+          <Route path="/" element={<Landing   callbackSetUserid = {CallbackSetUserid}  />} />
+          <Route path="/catalog/" element={<Catalog callbackSetUserid = {CallbackSetUserid}/>} />
+          <Route path="/catalog/:userid" element={<Catalog  callbackSetUserid = {CallbackSetUserid} />} />
           <Route path="/movies/:movieid" element={<MovieDetail />} />
           <Route path="*" element={<Page404 />} />
         </Routes>

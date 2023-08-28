@@ -6,7 +6,7 @@ import START_LIST_USERS from '.././Constants/ListUsers';
 
 
 export default function Landing({callbackSetUserid}) {
-  
+  callbackSetUserid(0)
     return (
       <div>
         <h1 id="landing ">Landing</h1>

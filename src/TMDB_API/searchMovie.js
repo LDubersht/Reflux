@@ -1,10 +1,11 @@
-import {options, img_uri,  popular_movie} from "./URI";
+import {options, img_uri,  search_movie} from "./URI";
 
-const getPopular = () => {
-    return fetch(popular_movie, options)
+export const searchMovie = (search_word) => {
+    let uri = `${search_movie}${search_word}`
+    return fetch(uri, options)
         .then((response) => response.json())
         .then((data) => {
-            const firstTopMovies = data.results.slice(0, 12000);
+            const firstTopMovies = data.results.slice(0, 20);
 
             return firstTopMovies.map((movie) => ({
                 id: movie.id,
@@ -21,5 +22,5 @@ const getPopular = () => {
         });
 };
 
-export default getPopular;
+export default searchMovie;
 

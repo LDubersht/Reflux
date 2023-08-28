@@ -10,19 +10,19 @@ export default function Movie({movie,action,userid}) {
       <div className ="one-movie" >
         <div>
           {movie.rented ? (
-              userid !== undefined ?
+              userid !== 0 ?
                 (<button onClick = {() => action(movie.id)} className = "action">
                 unrent
                 </button>) : (<></>)
             ) : (
-              userid !== undefined ?
+              userid !== 0 ?
               (<button onClick = {() => action(movie.id)} className = "action">
                 rent
                 </button>) : (<></>)
             )}
             </div>
         <Link to = {`../../movies/${movie.id}`}>
-         <img className="poster" src={movie.img}></img>
+         <img class="poster" src={movie.img}></img>
         </Link>
 
         <div>Released: {new Date(movie.release_date).getFullYear()}</div>
